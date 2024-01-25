@@ -4,6 +4,7 @@ import { AxiosContext, AxiosContextProvider } from './AxiosProvider'
 import { RouterProvider } from './RouterProvider'
 
 export const MainContext = createContext(null)
+const BASENAME_AXIOS = process.env.BASENAME_AXIOS
 
 export const MainApp = () => {
   console.log("ENTRAMOS", window.localStorage.getItem("TOKEN")
@@ -60,7 +61,7 @@ export const MainApp = () => {
 
   return (
     <MainContext.Provider value={[main, setMain]}>
-      <AxiosContextProvider contextMain={[main, setMain]} config={{ baseURL: "http://localhost:8080/api" }}>
+      <AxiosContextProvider contextMain={[main, setMain]} config={{ baseURL: BASENAME_AXIOS }}>
         <RouterProvider config={{ basename: "/v1" }} />
       </ AxiosContextProvider>
     </MainContext.Provider>
