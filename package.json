@@ -31,6 +31,7 @@
     "classnames": "^2.5.1",
     "css-loader": "^6.8.1",
     "dotenv-webpack": "^8.0.1",
+    "firebase": "^10.7.2",
     "html-webpack-plugin": "^5.5.4",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
