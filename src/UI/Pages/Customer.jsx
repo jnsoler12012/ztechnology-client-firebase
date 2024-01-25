@@ -54,7 +54,7 @@ export default function SystemUsers() {
     }
 
     const formatAttributes = (customerData) => {
-        //console.log(customerData);
+        console.log(customerData);
         const customerAttribuesFormated = customerData.reduce((prevCustomers, nextCustomer) => {
             //console.log(nextCustomer, prevCustomers);
             const singleCustomer = Object.keys(nextCustomer).reduce((prev, next) => {
@@ -67,11 +67,11 @@ export default function SystemUsers() {
                         },
                         enumerable: true
                     })
-                } else if (next == 'user') {
-                    return Object.defineProperty(prev, `${next}`, {
+                } else if (next == 'userTech') {
+                    return Object.defineProperty(prev, `userTech`, {
                         value: {
-                            idAttr: `${nextCustomer?.id}-${next}`,
-                            value: nextCustomer[next],
+                            idAttr: `${nextCustomer?.id}-userTech`,
+                            value: nextCustomer['userTech'],
                         },
                         enumerable: true
                     })
@@ -103,7 +103,7 @@ export default function SystemUsers() {
                 },
                 enumerable: true
             })
-            //console.log(prevCustomers, singleCustomer);
+            console.log(prevCustomers, singleCustomer);
             prevCustomers.push(singleCustomer)
 
             return prevCustomers

@@ -20,6 +20,8 @@ const randomPicture = [
   CustomerUserPoto1, CustomerUserPoto2, CustomerUserPoto3, CustomerUserPoto4, CustomerUserPoto5, CustomerUserPoto6, CustomerUserPoto7
 ]
 
+console.log(randomPicture, randomPicture[Math.floor(Math.random() * randomPicture.length)]);
+
 export default function ({ customerData }) {
   const { register, handleSubmit, setValue, watch, clearErrors, resetField, getValues, reset, formState: { errors } } = useForm({});
   const [currentCustomerEditing, setCurrentCustomerEditing] = useState(0)
@@ -27,7 +29,7 @@ export default function ({ customerData }) {
   const refValuesForm = []
 
   const headers = {
-    user: 'w-[5.11%] ',
+    userTech: 'w-[5.11%] ',
     createdAt: 'w-[7.11%] ',
     names: 'w-[13.11%] ',
     document: 'w-[10.11%] ',
@@ -158,14 +160,14 @@ export default function ({ customerData }) {
                       {
                         Object.keys(headers).map(header => {
                           return (
-                            ['user', 'createdAt'].includes(header)
+                            ['userTech', 'createdAt'].includes(header)
                               ? (
                                 <th
                                   key={`${header}-header`}
                                   className={
                                     `${headers[header]} px-3 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center bg-blueGray-50 text-blueGray-500 border-blueGray-100 `}
                                 >
-                                  {header}
+                                  {(header) == 'userTech' ? 'user' : header}
                                 </th>
                               )
                               : ['settings'].includes(header) ? (
@@ -200,7 +202,7 @@ export default function ({ customerData }) {
                         refValuesForm.push(
                           Object.keys(singleCustomer).reduce((prev, nextPropCustomerRef) => {
                             //console.log(prev);
-                            if (!['id', 'user', 'createdAt', 'settings'].includes(nextPropCustomerRef))
+                            if (!['id', 'userTech', 'createdAt', 'settings'].includes(nextPropCustomerRef))
                               prev.push(singleCustomer[nextPropCustomerRef].idAttr)
                             return prev
                           }, [])
@@ -217,14 +219,14 @@ export default function ({ customerData }) {
 
                                   if (header == propCustomer)
                                     return (
-                                      (['user', 'createdAt'].includes(propCustomer))
+                                      (['userTech', 'createdAt'].includes(propCustomer))
                                         ? (
                                           <td
                                             id={`TD-${singleCustomer[propCustomer].idAttr}`}
                                             key={`TD-${singleCustomer[propCustomer].idAttr}`}
                                             className="text-wrap border-t-0 px-2 align-middle border-l-0 border-r-0 text-xs pr-4">
                                             {
-                                              propCustomer == 'user'
+                                              propCustomer == 'userTech'
                                                 ? (
                                                   <div className='flex justify-center'>
                                                     <img
