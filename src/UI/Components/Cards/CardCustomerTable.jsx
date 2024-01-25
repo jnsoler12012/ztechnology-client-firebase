@@ -100,7 +100,7 @@ export default function ({ customerData }) {
     (
       async () => await deleteCustomer({
         data: { idCustomer: idDeleteUser },
-        userId: {
+        userTechId: {
           idUserRequester: mainContext.user?.info?.id,
         },
         context: { mainContext, setMainContext }

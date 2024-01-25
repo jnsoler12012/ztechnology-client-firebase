@@ -243,7 +243,7 @@ export default function ({ id }) {
             (
                 async () => await deleteQuote({
                     data: { idQuote: dataFormFormated.id },
-                    userId: {
+                    userTechId: {
                         idUserRequester: mainContext.user?.info?.id,
                     },
                     context: { mainContext, setMainContext }

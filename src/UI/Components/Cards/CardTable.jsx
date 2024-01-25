@@ -89,7 +89,7 @@ export default function CardTable({ systemUsers }) {
             (
                 async () => await deleteSystemUser({
                     data: { idSystemUser: idDeleteUser },
-                    userId: {
+                    userTechId: {
                         idUserRequester: mainContext.user?.info?.id,
                     },
                     context: { mainContext, setMainContext }

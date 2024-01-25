@@ -18,7 +18,7 @@ export default () => {
         "createdAt": "2024-01-22T05:54:15.000Z",
         "updatedAt": "2024-01-22T08:26:02.000Z",
         "customerId": 3,
-        "userId": 3,
+        "userTechId": 3,
         "user": {
             "id": 3,
             "names": "regular",

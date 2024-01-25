@@ -53,15 +53,15 @@ export default function ({ quoteData }) {
                 <QuotePDFComponent data={quote} />
             );
 
-            console.log(value, quote.user.names, quote.customer.names, quote.user.email, quote.description);
+            console.log(value, quote.userTech.names, quote.customer.names, quote.userTech.email, quote.description);
 
             emailjs.send(
                 process.env.WEBPACK_EMAILJS_SERVICE_ID,
                 process.env.WEBPACK_EMAILJS_TEMPLATE_ID,
                 {
                     to_name: quote.customer.names,
-                    from_name: quote.user.names,
-                    from_email: quote.user.email,
+                    from_name: quote.userTech.names,
+                    from_email: quote.userTech.email,
                     to_email: quote.customer.email,
                     message: quote.description,
                     my_html: value
@@ -164,10 +164,10 @@ export default function ({ quoteData }) {
                                                         </td>
                                                         <td className="text-wrap border-t-0 px-1 align-middle border-l-0 border-r-0 text-xs py-1 text-center">
                                                             <div className='uppercase text-xs font-semibold italic'>
-                                                                {singleQuote.user.role.name}
+                                                                {singleQuote.userTech.role.name}
                                                             </div>
                                                             <div className=''>
-                                                                {singleQuote.user.names}
+                                                                {singleQuote.userTech.names}
                                                             </div>
                                                         </td>
                                                         <td className="text-wrap border-t-0 px-1 align-middle border-l-0 border-r-0 text-xs py-1  text-center">
