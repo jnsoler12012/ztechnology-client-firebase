@@ -12,8 +12,8 @@ export default function (token) {
             return true
         } else {
             console.log('baad');
-            window.localStorage.removeItem('user');
-            window.localStorage.removeItem('TOKEN');
+            window.localStorage.removeItem('userTech');
+            window.localStorage.removeItem('TOKENtech');
             return false
         }
     }

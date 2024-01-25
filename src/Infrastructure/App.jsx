@@ -12,7 +12,7 @@ export const MainApp = () => {
   // window.localStorage.removeItem("TOKEN")
   // window.localStorage.removeItem("user")
 
-  const infoUser = window.localStorage.getItem("user") && window.localStorage.getItem("user").split(',').slice(0, -1).reduce((acc, curr) => (typeof acc === 'string' ? ({
+  const infoUser = window.localStorage.getItem("userTech") && window.localStorage.getItem("userTech").split(',').slice(0, -1).reduce((acc, curr) => (typeof acc === 'string' ? ({
     [acc.split('=')[0]]: acc.split('=')[1]
   }) : ({
     ...acc, [curr.split('=')[0]]: curr.split('=')[1]

@@ -3,9 +3,9 @@ import { Document, Page, StyleSheet, div, View } from '@react-pdf/renderer'
 
 export default function ({ data }) {
 
-    const { id, createdAt, deliveryType, description, discount, discountType, products, state, subTotal, total, customer, user } = data
+    const { id, createdAt, deliveryType, description, discount, discountType, products, state, subTotal, total, customer, userTech } = data
     const { address, city, document, email, names, phone } = customer
-    const { document: documentUser, email: emailUser, names: namesUser, role } = user
+    const { document: documentUser, email: emailUser, names: namesUser, role } = userTech
     console.log(data);
     return (
         <div >

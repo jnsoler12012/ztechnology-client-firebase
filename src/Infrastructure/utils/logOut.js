@@ -1,6 +1,6 @@
 export default function (setMainContext, type) {
-    window.localStorage.removeItem('user');
-    window.localStorage.removeItem('TOKEN');
+    window.localStorage.removeItem('userTech');
+    window.localStorage.removeItem('TOKENtech');
 
     if (type == 'Expire') {
         setMainContext((prevState) => ({
