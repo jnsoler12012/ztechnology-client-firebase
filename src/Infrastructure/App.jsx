@@ -7,7 +7,7 @@ export const MainContext = createContext(null)
 const BASENAME_AXIOS = process.env.BASENAME_AXIOS
 
 export const MainApp = () => {
-  console.log("ENTRAMOS", window.localStorage.getItem("TOKEN")
+  console.log("ENTRAMOS", window.localStorage.getItem("TOKENtech")
   )
   // window.localStorage.removeItem("TOKEN")
   // window.localStorage.removeItem("user")
@@ -23,7 +23,7 @@ export const MainApp = () => {
     reload: true,
     loading: false,
     user: {
-      token: window.localStorage.getItem("TOKEN") == 'null' ? null : window.localStorage.getItem("TOKEN"),
+      token: window.localStorage.getItem("TOKENtech") == 'null' ? null : window.localStorage.getItem("TOKENtech"),
       info: infoUser
     },
     data: {},
@@ -51,7 +51,7 @@ export const MainApp = () => {
   })
 
   useEffect(() => {
-    console.log("_____________MAIN A CAMBIADO", main, window.localStorage.getItem("TOKEN"))
+    console.log("_____________MAIN A CAMBIADO", main, window.localStorage.getItem("TOKENtech"))
 
     return () => {
       console.log("_____________RRR MAIN A CAMBIADO", main)

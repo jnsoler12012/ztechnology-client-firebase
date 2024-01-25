@@ -10,6 +10,7 @@ import { MainContext } from '../../../Infrastructure';
 import { logOut } from '../../../Infrastructure/utils';
 
 export default function ({ user }) {
+    console.log(user);
     const { createdAt, document, email, id, names, role, state } = user
     const [mainContext, setMainContext] = useContext(MainContext)
 

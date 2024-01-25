@@ -42,14 +42,14 @@ export default () => {
 
                     const userString = Object.entries(res.data.user).map(attr => (`${attr[0]}=${attr[1]},`)).join('');
 
-                    window.localStorage.setItem('user', userString);
-                    window.localStorage.setItem('TOKEN', encode(res.token));
+                    window.localStorage.setItem('userTech', userString);
+                    window.localStorage.setItem('TOKENtech', encode(res.token));
 
-                    console.log(window.localStorage.getItem("TOKEN"));
+                    console.log(window.localStorage.getItem("TOKENtech"));
                     setMainContext((prevState) => ({
                         ...prevState,
                         user: {
-                            token: window.localStorage.getItem('TOKEN'),
+                            token: window.localStorage.getItem('TOKENtech'),
                             info: res.data.user
                         }
                     }))
